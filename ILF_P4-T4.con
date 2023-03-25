@@ -1,4 +1,4 @@
-objects=16
+objects=17
 main-top=-8
 main-left=-8
 main-right=2301
@@ -11,12 +11,12 @@ design-top=0
 design-left=251
 design-right=824
 design-bottom=491
-tool-top=280
-tool-left=1375
-tool-right=1986
-tool-bottom=733
-showdesign=1
-hidestatus=0
+tool-top=342
+tool-left=596
+tool-right=1207
+tool-bottom=795
+showdesign=0
+hidestatus=1
 showtoolbox=-1
 autorun=1
 minimized=0
@@ -182,7 +182,7 @@ xpos=183
 ypos=96
 inputports=2
 outputports=1
-tag=A/100
+tag=A/10
 inport1desc=P8
 inport1dim=uV
 inport1min=-150.000000
@@ -198,7 +198,7 @@ outport1dim=uV
 outport1min=-150.000000
 outport1max=4000.000000
 outport1range=0
-expression=A/100
+expression=A/10
 linkport 0-4,0
 end object
 next object=3
@@ -229,7 +229,7 @@ outport3max=100.000000
 outport3range=0
 play_interval=0
 interval_len=1
-gain=97
+gain=25
 from-input=0.000000
 to-input=100.000000
 and/or=1
@@ -257,8 +257,8 @@ truemode=0
 falsemode=1
 numerictruevalue=1
 numericfalsevalue=300
+linkport 2-8,1
 linkport 0-6,0
-linkport 2-6,1
 end object
 next object=35
 xpos=357
@@ -282,7 +282,7 @@ outport1min=-1.000000
 outport1max=1.000000
 outport1range=0
 mode=2
-coutnervalue=5361.371582
+coutnervalue=3100.791504
 resetvalue=0.000000
 showcounter=1
 fontsize=25
@@ -297,9 +297,52 @@ wndcaption=T3 mV
 digits=2
 timeformat=0
 end object
+next object=54
+xpos=100
+ypos=275
+inputports=1
+outputports=1
+tag=LIMITER
+inport1desc=Fp1
+inport1dim=%
+inport1min=0.000000
+inport1max=100.000000
+inport1range=1
+outport1desc=Fp1
+outport1dim=%
+outport1min=0.000000
+outport1max=100.000000
+outport1range=0
+upper=1000.000000
+lower=50.000000
+linkport 0-8,0
+end object
+next object=9
+xpos=160
+ypos=186
+inputports=1
+outputports=1
+tag=<2Hz
+inport1desc=P8
+inport1dim=uV
+inport1min=-150.000000
+inport1max=150.000000
+inport1range=1
+outport1desc=T3
+outport1dim=mV
+outport1min=0.000000
+outport1max=300.000000
+outport1range=-1
+type=1
+order=4
+center=1.000000
+width=1.000000
+gain=1
+linkport 0-9,0
+end object
 next object=16
-xpos=136
-ypos=276
+xpos=179
+ypos=292
 inputports=3
 outputports=1
 tag=A/B*70+30
@@ -325,43 +368,8 @@ outport1max=100.000000
 outport1range=0
 expression=A/B*70+30
 linkport 0-15,0
-linkport 0-8,0
+linkport 0-16,0
 linkport 0-13,0
-end object
-next object=9
-xpos=160
-ypos=186
-inputports=1
-outputports=1
-tag=<2Hz
-inport1desc=P8
-inport1dim=uV
-inport1min=-150.000000
-inport1max=150.000000
-inport1range=1
-outport1desc=T3
-outport1dim=mV
-outport1min=0.000000
-outport1max=300.000000
-outport1range=-1
-type=1
-order=4
-center=1.000000
-width=1.000000
-gain=1
-linkport 0-9,0
-end object
-next object=67
-xpos=237
-ypos=265
-inputports=1
-outputports=0
-tag=VOLUME
-inport1desc=Fp1
-inport1dim=%
-inport1min=0.000000
-inport1max=100.000000
-inport1range=1
 end object
 next object=2
 xpos=267
@@ -506,9 +514,9 @@ outputports=0
 tag=OSCI
 inport1desc=P8
 inport1dim=uV
-inport1min=-150.000000
+inport1min=2000.000000
 inport1max=4000.000000
-inport1range=1
+inport1range=0
 inport2desc=none
 inport2dim=none
 inport2min=-1.000000
@@ -516,13 +524,13 @@ inport2max=1.000000
 inport2range=1
 grid=1
 line=1
-gain=29
-seconds=600
+gain=96
+seconds=0
 top=0
 left=823
 right=1799
 bottom=802
-drawinterval=340
+drawinterval=6
 within=1
 group=0
 gradual=0
@@ -541,8 +549,8 @@ signal2=150.000000
 sigsize2=1
 end object
 next object=35
-xpos=250
-ypos=344
+xpos=298
+ypos=341
 inputports=2
 outputports=1
 tag=COUNTER
@@ -562,7 +570,7 @@ outport1min=-1.000000
 outport1max=1.000000
 outport1range=0
 mode=2
-coutnervalue=66.403709
+coutnervalue=84.263855
 resetvalue=0.000000
 showcounter=1
 fontsize=25
@@ -636,4 +644,16 @@ left=0
 right=2293
 bottom=960
 locked=1
+end object
+next object=67
+xpos=298
+ypos=270
+inputports=1
+outputports=0
+tag=VOLUME
+inport1desc=Fp1
+inport1dim=%
+inport1min=0.000000
+inport1max=100.000000
+inport1range=1
 end object
