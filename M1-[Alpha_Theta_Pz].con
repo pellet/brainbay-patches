@@ -13,8 +13,8 @@ design-right=1177
 design-bottom=1034
 tool-top=326
 tool-left=725
-tool-right=1167
-tool-bottom=930
+tool-right=1164
+tool-bottom=561
 showdesign=1
 hidestatus=0
 showtoolbox=-1
@@ -480,8 +480,8 @@ outport1max=30.000000
 outport1range=-1
 type=1
 order=4
-center=9.000000
-width=1.000000
+center=9.500000
+width=1.500000
 gain=100
 linkport 0-14,0
 end object
@@ -967,11 +967,11 @@ interval=19999
 linkport 0-32,4
 end object
 next object=16
-xpos=580
-ypos=137
+xpos=558
+ypos=96
 inputports=5
 outputports=1
-tag=C-(B-A)/2
+tag=(C+B+A)/3
 inport1desc=Highband alpha P3+P4+O1+O2
 inport1dim=uV
 inport1min=0.000000
@@ -1002,7 +1002,7 @@ outport1dim=uV
 outport1min=0.000000
 outport1max=100.000000
 outport1range=-1
-expression=C-(B-A)/2
+expression=(C+B+A)/3
 linkport 0-27,0
 end object
 next object=6
@@ -1083,8 +1083,8 @@ signal7=150.000000
 sigsize7=1
 end object
 next object=54
-xpos=587
-ypos=64
+xpos=598
+ypos=34
 inputports=1
 outputports=1
 tag=LIMITER
