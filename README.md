@@ -13,7 +13,7 @@ BrainBay configurations can be found under each respective sub-directory.
 
 Configurations are named like so:
 
-(NEUROFEEDBACK STYLE)_(REFERENCE POSITION)-(ACTUAL POSITIONS).conf
+``` (NEUROFEEDBACK STYLE)_(REFERENCE POSITION)-(ACTUAL POSITIONS).conf ```
 
 -------
 
