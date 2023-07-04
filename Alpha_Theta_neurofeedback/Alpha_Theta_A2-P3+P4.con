@@ -1,4 +1,4 @@
-objects=30
+objects=31
 main-top=-8
 main-left=-8
 main-right=2764
@@ -13,8 +13,8 @@ design-right=1138
 design-bottom=909
 tool-top=502
 tool-left=430
-tool-right=1041
-tool-bottom=955
+tool-right=872
+tool-bottom=1106
 showdesign=1
 hidestatus=0
 showtoolbox=-1
@@ -124,7 +124,7 @@ linkport 4-1,0
 linkport 5-1,1
 linkport 4-10,0
 linkport 4-22,0
-linkport 5-28,0
+linkport 5-27,0
 linkport 5-21,0
 end object
 next object=25
@@ -340,7 +340,7 @@ outport1max=30.000000
 outport1range=0
 expression=A
 linkport 0-11,1
-linkport 0-25,0
+linkport 0-24,0
 end object
 next object=3
 xpos=343
@@ -370,9 +370,9 @@ outport3max=30.000000
 outport3range=0
 play_interval=0
 interval_len=1
-gain=24
+gain=33
 from-input=-5.000000
-to-input=20.549999
+to-input=30.000000
 and/or=1
 show-meter=1
 only-rising=0
@@ -428,7 +428,7 @@ outport1max=30.000000
 outport1range=0
 expression=A
 linkport 0-11,0
-linkport 0-26,0
+linkport 0-25,0
 end object
 next object=9
 xpos=109
@@ -451,7 +451,7 @@ order=4
 center=6.500000
 width=1.500000
 gain=10
-linkport 0-29,1
+linkport 0-28,1
 end object
 next object=50
 xpos=527
@@ -482,8 +482,8 @@ outport1range=0
 linkport 0-12,0
 end object
 next object=18
-xpos=618
-ypos=69
+xpos=603
+ypos=80
 inputports=1
 outputports=1
 tag=AVERAGER
@@ -499,11 +499,70 @@ outport1max=30.000000
 outport1range=0
 interval=19999
 linkport 0-13,0
-linkport 0-27,0
+linkport 0-14,0
 end object
 next object=3
-xpos=723
-ypos=38
+xpos=694
+ypos=162
+inputports=1
+outputports=3
+tag=THRESHOLD
+inport1desc=Theta
+inport1dim=uV
+inport1min=-5.000000
+inport1max=30.000000
+inport1range=1
+outport1desc=Theta
+outport1dim=uV
+outport1min=-5.000000
+outport1max=30.000000
+outport1range=0
+outport2desc=Theta
+outport2dim=uV
+outport2min=-5.000000
+outport2max=30.000000
+outport2range=0
+outport3desc=Theta
+outport3dim=uV
+outport3min=-5.000000
+outport3max=30.000000
+outport3range=0
+play_interval=0
+interval_len=1
+gain=76
+from-input=-5.000000
+to-input=30.000000
+and/or=1
+show-meter=1
+only-rising=0
+only-falling=0
+baseline=0
+color=8388736.000000
+bkcol=0.000000
+fontcol=32768.000000
+fontbkcol=0.000000
+top=637
+left=1158
+right=1294
+bottom=940
+adapt_lower_limit=0
+adapt_upper_limit=101
+adapt_lower_mode=0
+adapt_upper_mode=0
+adaptinterval=1000
+barsize=30
+fontsize=10
+wndcaption=Volume
+truemode=0
+falsemode=1
+numerictruevalue=1
+numericfalsevalue=100
+linkport 0-23,0
+linkport 2-23,1
+end object
+next object=3
+xpos=697
+ypos=19
 inputports=1
 outputports=3
 tag=THRESHOLD
@@ -541,10 +600,10 @@ color=8388736.000000
 bkcol=0.000000
 fontcol=32768.000000
 fontbkcol=0.000000
-top=637
-left=1158
-right=1294
-bottom=940
+top=639
+left=1586
+right=1722
+bottom=942
 adapt_lower_limit=0
 adapt_upper_limit=101
 adapt_lower_mode=0
@@ -552,38 +611,13 @@ adapt_upper_mode=0
 adaptinterval=1000
 barsize=30
 fontsize=10
-wndcaption=Reward
+wndcaption=Brightness
 truemode=0
 falsemode=1
 numerictruevalue=1
 numericfalsevalue=100
-linkport 0-14,0
-linkport 0-14,0
 linkport 0-17,0
-end object
-next object=16
-xpos=821
-ypos=24
-inputports=2
-outputports=1
-tag=100-(A*0.8+2..
-inport1desc=Theta
-inport1dim=uV
-inport1min=-5.000000
-inport1max=30.000000
-inport1range=1
-inport2desc=none
-inport2dim=none
-inport2min=-1.000000
-inport2max=1.000000
-inport2range=1
-outport1desc=Theta
-outport1dim=uV
-outport1min=-5.000000
-outport1max=30.000000
-outport1range=0
-expression=100-(A*0.8+20)
-linkport 0-18,0
+linkport 2-17,1
 end object
 next object=6
 xpos=596
@@ -714,32 +748,37 @@ palette-file=none
 wndcaption=Alpha
 end object
 next object=16
-xpos=825
-ypos=109
-inputports=2
+xpos=791
+ypos=22
+inputports=3
 outputports=1
-tag=A*0.95+5
+tag=100-(A/B*95+..
 inport1desc=Theta
 inport1dim=uV
 inport1min=-5.000000
 inport1max=30.000000
 inport1range=1
-inport2desc=none
-inport2dim=none
-inport2min=-1.000000
-inport2max=1.000000
+inport2desc=Theta
+inport2dim=uV
+inport2min=-5.000000
+inport2max=30.000000
 inport2range=1
+inport3desc=none
+inport3dim=none
+inport3min=-1.000000
+inport3max=1.000000
+inport3range=1
 outport1desc=Theta
 outport1dim=uV
 outport1min=-5.000000
 outport1max=30.000000
 outport1range=0
-expression=A*0.95+5
-linkport 0-23,0
+expression=100-(A/B*95+5)
+linkport 0-18,0
 end object
 next object=54
-xpos=912
-ypos=61
+xpos=877
+ypos=29
 inputports=1
 outputports=1
 tag=LIMITER
@@ -754,9 +793,9 @@ outport1min=-5.000000
 outport1max=30.000000
 outport1range=0
 upper=100.000000
-lower=20.000000
-linkport 0-24,0
+lower=5.000000
 linkport 0-20,0
+linkport 0-30,0
 end object
 next object=2
 xpos=347
@@ -810,8 +849,8 @@ palette-file=none
 wndcaption=Theta
 end object
 next object=68
-xpos=1003
-ypos=98
+xpos=985
+ypos=38
 inputports=2
 outputports=0
 tag=OSC-SENDER
@@ -828,9 +867,9 @@ inport2range=1
 host=127.0.0.1
 route=/channel/
 port=16342
-sendinterval=1
+sendinterval=100
 blockinvalidvalue=1
-onlychanging=0
+onlychanging=1
 end object
 next object=9
 xpos=106
@@ -853,7 +892,7 @@ order=4
 center=6.500000
 width=1.500000
 gain=10
-linkport 0-29,3
+linkport 0-28,3
 end object
 next object=9
 xpos=106
@@ -876,37 +915,37 @@ order=4
 center=9.500000
 width=1.500000
 gain=100
+linkport 0-28,0
+end object
+next object=16
+xpos=788
+ypos=243
+inputports=3
+outputports=1
+tag=A/B*95+5
+inport1desc=Theta
+inport1dim=uV
+inport1min=-5.000000
+inport1max=30.000000
+inport1range=1
+inport2desc=Theta
+inport2dim=uV
+inport2min=-5.000000
+inport2max=30.000000
+inport2range=1
+inport3desc=none
+inport3dim=none
+inport3min=-1.000000
+inport3max=1.000000
+inport3range=1
+outport1desc=Theta
+outport1dim=uV
+outport1min=-5.000000
+outport1max=30.000000
+outport1range=0
+expression=A/B*95+5
 linkport 0-29,0
-end object
-next object=67
-xpos=915
-ypos=150
-inputports=1
-outputports=0
-tag=VOLUME
-inport1desc=Theta
-inport1dim=uV
-inport1min=-5.000000
-inport1max=30.000000
-inport1range=1
-end object
-next object=66
-xpos=1010
-ypos=27
-inputports=1
-outputports=0
-tag=SHADOW
-inport1desc=Theta
-inport1dim=uV
-inport1min=-5.000000
-inport1max=30.000000
-inport1range=1
-bkcolor=0.000000
-top=0
-left=-7
-right=2765
-bottom=1172
-locked=1
+linkport 0-26,0
 end object
 next object=35
 xpos=541
@@ -930,7 +969,7 @@ outport1min=-1.000000
 outport1max=1.000000
 outport1range=0
 mode=2
-coutnervalue=7.839964
+coutnervalue=11.966528
 resetvalue=0.000000
 showcounter=1
 fontsize=25
@@ -967,7 +1006,7 @@ outport1min=-1.000000
 outport1max=1.000000
 outport1range=0
 mode=2
-coutnervalue=5.587408
+coutnervalue=10.709417
 resetvalue=0.000000
 showcounter=1
 fontsize=25
@@ -983,8 +1022,8 @@ digits=2
 timeformat=0
 end object
 next object=35
-xpos=739
-ypos=203
+xpos=886
+ypos=307
 inputports=2
 outputports=1
 tag=COUNTER
@@ -1004,7 +1043,7 @@ outport1min=-1.000000
 outport1max=1.000000
 outport1range=0
 mode=2
-coutnervalue=8.181817
+coutnervalue=33.962524
 resetvalue=0.000000
 showcounter=1
 fontsize=25
@@ -1040,7 +1079,7 @@ order=4
 center=9.500000
 width=1.500000
 gain=100
-linkport 0-29,2
+linkport 0-28,2
 end object
 next object=6
 xpos=345
@@ -1118,4 +1157,53 @@ signal6=32768.000000
 sigsize6=1
 signal7=150.000000
 sigsize7=1
+end object
+next object=67
+xpos=890
+ypos=240
+inputports=1
+outputports=0
+tag=VOLUME
+inport1desc=Theta
+inport1dim=uV
+inport1min=-5.000000
+inport1max=30.000000
+inport1range=1
+end object
+next object=35
+xpos=960
+ypos=117
+inputports=2
+outputports=1
+tag=COUNTER
+inport1desc=Theta
+inport1dim=uV
+inport1min=-5.000000
+inport1max=30.000000
+inport1range=1
+inport2desc=none
+inport2dim=none
+inport2min=-1.000000
+inport2max=1.000000
+inport2range=1
+outport1desc=none
+outport1dim=none
+outport1min=-1.000000
+outport1max=1.000000
+outport1range=0
+mode=2
+coutnervalue=17.639576
+resetvalue=0.000000
+showcounter=1
+fontsize=25
+fontcolor=4194432.000000
+bkcolor=0.000000
+top=640
+left=1722
+right=1922
+bottom=890
+integer=0
+wndcaption=Counter
+digits=2
+timeformat=0
 end object
